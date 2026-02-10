@@ -67,7 +67,7 @@ pipeline {
                 docker stop myapp || echo not running
                 docker rm myapp || echo not removed
                 docker pull %IMAGE%:latest
-                docker run -d -p 9001:80 --restart==always --name myapp %IMAGE%:latest
+                docker run -d -p 9001:80 --restart=always --name myapp %IMAGE%:latest
                 """
             }
         }
