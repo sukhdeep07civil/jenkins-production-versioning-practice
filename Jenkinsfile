@@ -64,7 +64,7 @@ pipeline {
         stage('Deploy with Docker compose'){
             steps{
                 bat """
-                docker-compose down || echo docker compose down
+                docker-compose down 
                 docker-compose pull
                 docker-compose up -d
                 """
