@@ -66,7 +66,7 @@ pipeline {
                 bat """
                 docker-compose down 
                 docker-compose pull
-                docker-compose up -d
+                docker-compose up -d --scale myapp=3
                 """
             }
         }
