@@ -61,13 +61,12 @@ pipeline {
             }
         }
 
-        stage('Deploy latest'){
+        stage('Deploy with Docker compose'){
             steps{
                 bat """
-                docker stop myapp || echo not running
-                docker rm myapp || echo not removed
-                docker pull %IMAGE%:latest
-                docker run -d -p 9001:80 --restart=always --name myapp %IMAGE%:latest
+                docker-compose down || echo docker compose down
+                docker-compose pull
+                docker-compose up -d
                 """
             }
         }

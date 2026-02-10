@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  myapp:
+    image: jenkins-production-versioning-practice:latest
+    container_name: myapp
+    ports:
+      - "9001:80"
+    restart: always
