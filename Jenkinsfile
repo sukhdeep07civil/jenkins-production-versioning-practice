@@ -64,8 +64,8 @@ pipeline {
         stage('Deploy latest'){
             steps{
                 bat """
-                docker stop myapp || exit 0
-                docker rm myapp || exit 0
+                docker stop myapp || echo not running
+                docker rm myapp || echo not removed
                 docker pull %IMAGE%:latest
                 docker run -d -p 9001:80 --name myapp %IMAGE%:latest
                 """
