@@ -1,6 +1,4 @@
 services:
   myapp:
     image: ssm0712/jenkins-production-versioning-practice:latest
-    ports:
-      - "9001:80"
     restart: always
