@@ -60,5 +60,16 @@ pipeline {
                 }
             }
         }
+
+        stage('Deploy latest'){
+            steps{
+                bat """
+                docker stop myapp || exit 0
+                docker rm myapp || exit 0
+                docker pull %IMAGE%:latest
+                docker run -d -p 8080:80 --name myapp %IMAGE%:latest
+                """
+            }
+        }
     }
 }
