@@ -67,7 +67,7 @@ pipeline {
                 docker stop myapp || exit 0
                 docker rm myapp || exit 0
                 docker pull %IMAGE%:latest
-                docker run -d -p 8080:80 --name myapp %IMAGE%:latest
+                docker run -d -p 9001:80 --name myapp %IMAGE%:latest
                 """
             }
         }
